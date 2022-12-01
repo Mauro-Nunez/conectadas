@@ -23,7 +23,6 @@
 			{{ form_widget(form.apellido)}}
             {{ form_widget(form.nombre)}}
             {{ form_widget(form.dni)}}
-            {{ form_widget(form.jornada)}}
 			{{ form_widget(form.enviar)}}
 			{{ form_end(form) }}
 		</div>
@@ -36,7 +35,6 @@
       <th scope="col">Apellido</th>
       <th scope="col">Nombre</th>
       <th scope="col">DNI</th>
-      <th scope="col">Jornada</th>
     </tr>
     </thead>
     <tbody>
@@ -45,7 +43,6 @@
         <td>{{persona.apellido}}</td>
         <td>{{persona.nombre}}</td>
         <td style="width:15%">{{persona.dni}}</td>
-        <td style="width:10%">{{persona.jornada}}</td>
         </tr>
       {% endfor %}
 

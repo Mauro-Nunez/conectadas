@@ -16,7 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class CargaController extends AbstractController
 {
     /**
-     * @Route("/carga", name="app_carga")
+     * @Route("/", name="app_carga")
      */
     public function index(Request $request, EntityManagerInterface $entityManager,
                             ManagerRegistry $doctrine): Response
@@ -26,10 +26,9 @@ class CargaController extends AbstractController
 
 
         $form = $this->createFormBuilder()
-        ->add('apellido', TextType::class, ['attr' => ['placeholder' => 'APELLIDO','style'=>'width:200px']])
-        ->add('nombre', TextType::class, ['attr' => ['placeholder' => 'NOMBRE','style'=>'width:200px']])
+        ->add('apellido', TextType::class, ['attr' => ['placeholder' => 'APELLIDO','style'=>'width:250px']])
+        ->add('nombre', TextType::class, ['attr' => ['placeholder' => 'NOMBRE','style'=>'width:250px']])
         ->add('dni', TextType::class, ['attr' => ['placeholder' => 'DNI','style'=>'width:100px']])
-        ->add('jornada', TextType::class, ['attr' => ['placeholder' => 'JORNADA','style'=>'width:100px']])
         ->add('enviar', SubmitType::class)
         ->getForm();
 
@@ -45,7 +44,7 @@ class CargaController extends AbstractController
             $persona->setApellido($datos['apellido']);
             $persona->setNombre($datos['nombre']);
             $persona->setDni($datos['dni']);
-            $persona->setJornada($datos['jornada']);
+
 
 
             $entityManager->persist($persona);
