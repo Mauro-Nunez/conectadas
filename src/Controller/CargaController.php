@@ -41,8 +41,8 @@ class CargaController extends AbstractController
 
             $datos = $form->getData();
 
-            $persona->setApellido($datos['apellido']);
-            $persona->setNombre($datos['nombre']);
+            $persona->setApellido(strtoupper($datos['apellido']));
+            $persona->setNombre(strtoupper($datos['nombre']));
             $persona->setDni($datos['dni']);
 
 
